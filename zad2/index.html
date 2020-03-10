@@ -1,0 +1,32 @@
+<html>
+<head>
+
+
+	<script>
+	function skrypt(){
+		var data = "imie=" + document.getElementById("imie").value + 
+			"&nazwisko="+document.getElementById("nazwisko").value;
+			
+		var request = new XMLHttpRequest();	
+		request.open("POST", "server.php", true);
+		request.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+		request.onreadystatechange = function() {
+			document.getElementById("response").innerHTML = request.responseText;
+		}
+		request.send(data);
+	}
+	</script>
+
+
+</dead>
+<body>
+	
+	<h1> Siema </h1>
+	<input type="text" id="imie" placeholder="imie" >
+	<input type="text" id="nazwisko" placeholder="nazwisko" >
+	<input type="submit" value="click" onClick="javascript:skrypt()">
+	
+	<div id="response" style="color: red;"></div>
+	
+</body>
+</html>
